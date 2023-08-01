@@ -8,7 +8,6 @@ menuIcon.onclick = () => {
 
 };
 
-
 // ============= scroll section active link ==============
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
@@ -33,7 +32,7 @@ window.onscroll = () => {
 
     let header = document.querySelector('header');
 
-    header.classList.toggle('sticky', window.scrollY > 100);
+    header.classList.toggle('sticky', window.scrollY > 50);
 
     // ============== remove toggle icon and navbar when click navbar link (scroll) ===================
     menuIcon.classList.remove('bx-x');
@@ -44,24 +43,28 @@ window.onscroll = () => {
  ScrollReveal({
     reset: true,
     distance: '80px',
-    duration: 2000,
-    delay: 200
+    duration: 1000,
+    delay: 100
 });
 
-// ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-// ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
-// ScrollReveal().reveal('.home-content h3, .about-img', { origin: 'left' });
-// ScrollReveal().reveal('.home-content p, .about-p', { origin: 'right' });
+ScrollReveal().reveal('.home' , {origin: 'bottom'});
+ScrollReveal().reveal('.about' , {origin: 'bottom'});
+ScrollReveal().reveal('.portfolio' , {origin: 'bottom'});
+ScrollReveal().reveal('.contact' , {origin: 'bottom'});
+ScrollReveal().reveal('.about-content' , {origin: 'bottom'});
+ScrollReveal().reveal('.about-img' , {origin: 'bottom'});
+ScrollReveal().reveal('.portfolio-box' , {origin: 'bottom'});
 
 ScrollReveal({
     reset: false,
-    distance: '80px',
-    duration: 2000,
-    delay: 200
+    distance: '50px',
+    duration: 1000,
+    delay: 100
 });
 
 
-ScrollReveal().reveal('.logo, .navbar', {origin: 'top'});
+ScrollReveal().reveal('.navbar' , {origin: 'top'});
+ScrollReveal().reveal('.logo' , {origin: 'top'});
 
  // ================ typed js ==================
 
@@ -102,5 +105,19 @@ const type = new Typed('.multiple-text-1', {
     backDelay:1000,
     loop: true
  });
+
+
+ 
+//  ========================download button =========================
+
+const button = document.querySelector('.download-btn');
+
+
+
+button.addEventListener('click', () => {
+    button.classList.add('active');
+});
+
+
 
 
